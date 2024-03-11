@@ -1,0 +1,23 @@
+%h1 Listing student_classes
+
+%table
+  %thead
+    %tr
+      %th Classname
+      %th School
+      %th
+      %th
+      %th
+
+  %tbody
+    - @student_classes.each do |student_class|
+      %tr
+        %td= student_class.classname
+        %td= student_class.school
+        %td= link_to 'Show', student_class
+        %td= link_to 'Edit', edit_student_class_path(student_class)
+        %td= link_to 'Destroy', student_class, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Student class', new_student_class_path

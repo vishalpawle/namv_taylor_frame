@@ -16,6 +16,7 @@
   %li
     %ul= link_to "Students", students_path
     %ul= link_to "Teachers", teachers_path
+    %li= link_to "Class information", student_classes_path
     %ul= button_to "Log out", destroy_user_session_path, method: :delete
 
 - else

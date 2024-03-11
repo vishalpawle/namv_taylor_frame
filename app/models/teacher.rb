@@ -7,6 +7,7 @@ class Teacher
   field :dateofbirth, type: Date
   field :gender, type: String
   validates :firstname, :lastname, :mobile, :dateofbirth, :gender, :presence => true
-
+  belongs_to :user
+  has_and_belongs_to_many :student_classes
 
 end
