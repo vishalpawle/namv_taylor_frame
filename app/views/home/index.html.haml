@@ -1,0 +1,23 @@
+%h1 Welcome to the Digital Taylor Frame!
+%p Forget your regular bag and heavy traditional tailor! Embrace the future of learning.
+%p Our digital frame empowers blind students to excel in mathematics.
+.features
+  .feature
+    %h2 Accessible Learning
+    %p Our digital Taylor frame provides an accessible learning experience for blind students, enabling them to engage with mathematics like never before.
+  .feature
+    %h2 Portable and Convenient
+    %p Say goodbye to bulky textbooks and equipment. Our digital frame is lightweight and portable, making it easy to carry and use anywhere, anytime.
+
+
+- if user_signed_in?
+  %h2 Welcome Home, #{current_user.email}  
+  %br/
+  %li
+    %ul= link_to "Students", students_path
+    %ul= link_to "Teachers", teachers_path
+    %ul= button_to "Log out", destroy_user_session_path, method: :delete
+
+- else
+  %h2 Log in / Sign up here:
+  = link_to 'Sign in', new_user_session_path

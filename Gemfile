@@ -19,6 +19,23 @@ gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
+gem 'simple_form'
+gem "country_select"
+gem 'mongoid'
+gem "haml"
+gem "haml-rails"
+gem "kaminari"
+gem "kaminari-mongoid"
+gem "devise"
+gem "twilio-ruby"
+gem "roo"
+gem 'carrierwave'
+#gem 'mongoid-grtid_fs'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
+gem 'ransack', :github => 'activerecord-hackery/ransack', :branch => 'main'
+gem 'faker'
+gem 'ransack-mongoid', github: 'activerecord-hackery/ransack-mongoid'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
