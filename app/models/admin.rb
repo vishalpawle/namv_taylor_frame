@@ -1,4 +1,4 @@
-class User
+class Admin
   include Mongoid::Document
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -34,15 +34,13 @@ class User
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
   include Mongoid::Timestamps
-  has_one :student
-  has_one :teacher
   validate :unique_email_across_users_and_admins
 
   private
 
   def unique_email_across_users_and_admins
-    if Admin.exists?(email: email)
-      errors.add(:email, "has already been taken by an admin")
+    if User.exists?(email: email)
+      errors.add(:email, "has already been taken by a user")
     end
   end
 end

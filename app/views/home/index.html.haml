@@ -9,7 +9,6 @@
     %h2 Portable and Convenient
     %p Say goodbye to bulky textbooks and equipment. Our digital frame is lightweight and portable, making it easy to carry and use anywhere, anytime.
 
-
 - if user_signed_in?
   %h2 Welcome Home, #{current_user.email}  
   %br/
@@ -18,7 +17,17 @@
     %ul= link_to "Teachers", teachers_path
     %li= link_to "Class information", student_classes_path
     %ul= button_to "Log out", destroy_user_session_path, method: :delete
-
+- elsif admin_signed_in?
+  %h2 Welcome Home, #{current_admin.email}  (Admin)
+  %br/
+  %li
+    %ul= link_to "Students", students_path
+    %ul= link_to "Teachers", teachers_path
+    %li= link_to "Class information", student_classes_path
+    %ul= button_to "Log out", destroy_admin_session_path, method: :delete
 - else
   %h2 Log in / Sign up here:
   = link_to 'Sign in', new_user_session_path
+
+  = link_to 'Sign in admin', new_admin_session_path
+
