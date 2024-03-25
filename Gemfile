@@ -30,6 +30,7 @@ gem "devise"
 gem "twilio-ruby"
 gem "roo"
 gem 'carrierwave'
+gem 'devise_invitable', '~> 2.0.0'
 #gem 'mongoid-grtid_fs'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'

@@ -1,5 +1,8 @@
 class Admin
   include Mongoid::Document
+  include Mongoid::Timestamps
+  include DeviseInvitable::Inviter
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -33,7 +36,7 @@ class Admin
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
-  include Mongoid::Timestamps
+  field :invitation_limit, type: Integer
   validate :unique_email_across_users_and_admins
 
   private

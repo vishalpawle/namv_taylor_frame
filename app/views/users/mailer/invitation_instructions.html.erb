@@ -1,0 +1,33 @@
+
+<p>Dear Sir/Madam, greeting from Niwant Andh Mukt Vikasalaya! </p>
+
+
+    <p>We hope this message finds you well. We are reaching out to you with an opportunity to make a profound impact on the lives of students with visual impairments through the power of education.</p>
+
+    <p>At Niwant Andh Mukt Vikasalaya, we are dedicated to providing innovative solutions to empower individuals with disabilities, particularly in the field of education. Currently, we are embarking on an initiative to enhance the learning experience for students with visual impairments in mathematics by utilizing cutting-edge technology: the Digital Taylor Frame.</p>
+
+    <p>The Digital Taylor Frame represents a revolutionary approach to teaching mathematics to students with visual impairments. Through its screen reader support and interactive capabilities, it enables these students to explore mathematical concepts with unprecedented ease and efficiency. By leveraging this technology, we aim to break down barriers and foster a more inclusive learning environment for all students with visual impairments.</p>
+
+    <p>We believe that you, as a passionate and dedicated educator, possess the skills and expertise necessary to make a meaningful difference in the lives of these students. Your commitment to excellence and your passion for teaching are precisely what we are seeking to amplify our impact.</p>
+
+    <p>As a teacher in our program, you will have the opportunity to:</p>
+    <ul>
+        <li>Empower students with visual impairments to develop a deep understanding of mathematical concepts.</li>
+        <li>Utilize state-of-the-art technology to deliver engaging and interactive lessons.</li>
+        <li>Collaborate with a supportive team of educators and specialists dedicated to accessibility and inclusion.</li>
+        <li>Make a lasting difference in the lives of students who are eager to learn and grow.</li>
+    </ul>
+
+
+    <p>If you are interested in joining us on this transformative journey, we request you to accept the below invitation.</p>
+
+<p><%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, invitation_token: @token) %></p>
+
+<% if @resource.invitation_due_at %>
+  <p><%= t("devise.mailer.invitation_instructions.accept_until", due_date: l(@resource.invitation_due_at, format: :'devise.mailer.invitation_instructions.accept_until_format')) %></p>
+<% end %>
+
+<p><%= t("devise.mailer.invitation_instructions.ignore") %></p>
+    <p>Warm regards,</p>
+<br>
+    Niwant Andh Mukt Vikasalaya team! <br>

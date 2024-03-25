@@ -15,7 +15,8 @@
   %li
     %ul= link_to "Students", students_path
     %ul= link_to "Teachers", teachers_path
-    %li= link_to "Class information", student_classes_path
+    %ul= link_to "Class information", student_classes_path
+
     %ul= button_to "Log out", destroy_user_session_path, method: :delete
 - elsif admin_signed_in?
   %h2 Welcome Home, #{current_admin.email}  (Admin)
@@ -23,7 +24,8 @@
   %li
     %ul= link_to "Students", students_path
     %ul= link_to "Teachers", teachers_path
-    %li= link_to "Class information", student_classes_path
+    %ul= link_to "Class information", student_classes_path
+    %ul= link_to "Invite Teacher", new_user_invitation_path
     %ul= button_to "Log out", destroy_admin_session_path, method: :delete
 - else
   %h2 Log in / Sign up here:

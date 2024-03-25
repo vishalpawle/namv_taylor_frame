@@ -9,6 +9,7 @@
     = f.input :mobile, as: :integer
     = f.input :gender, as: :radio_buttons, collection: [['Male', 'male'], ['Female', 'female'], ['Other', 'other']]
     = f.input :dateofbirth
+    =f.hidden_field :user_id, :value => current_user.id
 
   .form-actions
     = f.button :submit
